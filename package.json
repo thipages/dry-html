@@ -1,6 +1,6 @@
 {
   "name": "dry-html",
-  "version": "0.0.1",
+  "version": "0.3.0",
   "description": "DRY html",
   "main": "src/index.js",
   "type": "module",
