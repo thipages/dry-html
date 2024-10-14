@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dry-html tests</title>
+    <script type="module" src="index.js"></script>
+    <!--script src="./../dry-html.js"></script-->
+    <style>
+        .ok  { color: green }
+        .nok {color: orangered}
+    </style>
+</head>
+<body>
+    <h1>dry-html tests</h1>
+    <section>
+        <h2>Results</h2>
+        <div id="results"></div>
+    </section>
+    <section>
+        <h2>HTML output</h2>
+        <!-- Validity of template id (only no dash id is tested not starting dash) -->
+        <template id="test">
+            <span>{t-name}</span>
+        </template>
+        <test
+            t-name="test"
+        ></test>
+        <!-- Inner text placeholder -->
+        <template id="test-t1">
+            <span>{t-name}</span>
+        </template>
+        <test-t1
+            t-name="t1-name"
+        ></test-t1>
+        <!-- attribute placeholder -->
+        <template id="test-t2">
+            <span class="{t-class}" >class attribute placeholder</span>
+        </template>
+        <test-t2
+            t-class="ok"
+        ></test-t2>
+        <!-- Inner text placeholder do not allow before or after text -->
+        <template id="test-t3">
+            <span>before{t-name}after</span>
+        </template>
+        <test-t3
+            t-name="t3-name"
+        ></test-t3>
+    </section>
+</body>
+</html>

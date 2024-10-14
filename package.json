@@ -1,0 +1,31 @@
+{
+  "name": "html-dried",
+  "version": "0.0.1",
+  "description": "DRY html",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "npm run rollup:esm_min",
+    "rollup:esm_min": "rollup --config rollup/rollup.config_esm_min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thipages/html-dried.git"
+  },
+  "keywords": [
+    "DRY",
+    "html",
+    "template"
+  ],
+  "author": "Thierry Pagès",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thipages/html-dried/issues"
+  },
+  "homepage": "https://github.com/thipages/html-dried#readme",
+  "devDependencies": {
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-terser": "^0.4.4"
+  }
+}
