@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thipages/html-dried.git"
+    "url": "git+https://github.com/thipages/dry-html.git"
   },
   "keywords": [
     "DRY",
@@ -20,9 +20,9 @@
   "author": "Thierry Pagès",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/thipages/html-dried/issues"
+    "url": "https://github.com/thipages/dry-html/issues"
   },
-  "homepage": "https://github.com/thipages/html-dried#readme",
+  "homepage": "https://github.com/thipages/dry-html#readme",
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-node-resolve": "^15.3.0",
