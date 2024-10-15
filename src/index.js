@@ -47,17 +47,10 @@ function createCustomElement(templateId) {
                 this.style.display = 'block'
                 this.tRefs = structuredClone(refData)
                 this.append(refClone.cloneNode(true))
-                setData(this)
-                deleteAttributes(this)
-                
+                setData(this)               
             }
         }
     )
-}
-function deleteAttributes(that) {
-    for (const attribute of that.attributes) {
-        if ((''+attribute).substring(0,2) === 't-') that.remoevAttribute(attribute)
-    }
 }
 function updateElement(el, prop, value) {
     if (prop === INNER) {
