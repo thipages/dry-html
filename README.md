@@ -57,7 +57,7 @@ See the `test/index.html` file to understand the technical scope
 
 ## ... Javascript
 
-a Javascript access is also available via `esm.min.js` with the following exports
+a Javascript access is also available via `esm.min.js` or via `npm i dry-html` with the following exports
 
 ```javascript
 import {
