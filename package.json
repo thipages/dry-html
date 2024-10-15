@@ -5,8 +5,9 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "build": "npm run rollup:esm_min",
-    "rollup:esm_min": "rollup --config rollup/rollup.config_esm_min.js"
+    "build": "npm run rollup:auto_min && npm run rollup:esm_min",
+    "rollup:esm_min": "rollup --config rollup/rollup.config_esm_min.js",
+    "rollup:auto_min": "rollup --config rollup/rollup.config_auto_min.js"
   },
   "repository": {
     "type": "git",

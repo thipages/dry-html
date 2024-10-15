@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dry-html module tests</title>
+    <script type="module" src="index.js"></script>
+    <style>
+        .ok  { color: green }
+        .nok {color: orangered}
+    </style>
+</head>
+<body>
+    <h1>dry-html module tests</h1>
+    <section>
+        <h2>Results</h2>
+        <div id="results"></div>
+    </section>
+    <section>
+        <h2>HTML output</h2>
+        <template id="test-t1">
+            <span class="{t-class}">{t-name}</span>
+        </template>
+        <test-t1
+            t-name="test"
+            t-class="red"
+        ></test-t1>
+    </section>
+</body>
+</html>

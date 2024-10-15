@@ -55,3 +55,16 @@ This script will detect, once `DOMContentLoaded` triggered, the dashed-ids templ
 
 See the `test/index.html` file to understand the technical scope
 
+## ... Javascript
+
+a Javascript access is also available via `esm.min.js` with the following exports
+
+```javascript
+import {
+  defineCustomElements // for all template present in the document
+  defineCustomElement, // for one template id
+  getAttributes // for one template id
+} from 'dry-html'
+
+```
+

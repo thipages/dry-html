@@ -1,4 +1,4 @@
-import {} from './../src/index.js'
+import {} from '../../src/auto.js'
 document.addEventListener('DOMContentLoaded', run)
 // DEV: found one recurent case where systematic trailing ; is missing
 // Good practices vs light reading...

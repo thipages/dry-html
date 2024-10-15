@@ -1,8 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-    for (const template of [...document.getElementsByTagName('template')]) {
-        createCustomElement(template.id)
-    }
-})
 // Id generator
 const fixedId = ('dry-'+Math.random()).replace('.', '')
 let count = 1
@@ -11,6 +6,11 @@ const uid = ()  => fixedId + (count++)
 const INNER = '#inner#'
 // Placeholders matching any ASCII chars and dashed with  a t- prefix
 const pattern = /\{(?<content>t-\w[\-\w]+)\}/
+export {defineCustomElement, defineCustomElements, getAttributes}
+//
+function getAttributes(templateId) {
+    return setup(templateId).attributes
+}
 /**
  * refData is a Map
  *  key:  uniqueId
@@ -27,14 +27,25 @@ function setup(templateId) {
     const refClone = template.content.cloneNode(true)
     const refData = computeAttributes(refClone)
     computeInnerText(refClone, refData)
-    return {refClone, refData}
+    const attributes = new Set
+    for (const [, props] of refData) {
+        for (const [type, map, event] of props) {
+            attributes.add(map)
+        }
+    }
+    return {refClone, refData, attributes:[...attributes]}
 }
 function checkTemplateIdValidity(templateId) {
     if (!templateId) return false
     const dashIndex = templateId.indexOf('-')
     return dashIndex !==0 & dashIndex !== -1
 }
-function createCustomElement(templateId) {
+function defineCustomElements() {
+    for (const template of [... document.getElementsByTagName('template')]) {
+        defineCustomElement(template.id)
+    }
+}
+function defineCustomElement(templateId) {
     if (!checkTemplateIdValidity(templateId)) return
     const {refClone, refData} = setup(templateId)
     //
