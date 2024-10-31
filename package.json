@@ -1,6 +1,6 @@
 {
-  "name": "dry-html",
-  "version": "0.3.2",
+  "name": "@titsoft/dry-html",
+  "version": "0.4.0",
   "description": "DRY html",
   "main": "src/index.js",
   "type": "module",

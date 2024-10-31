@@ -58,7 +58,8 @@ function defineCustomElement(templateId) {
                 this.style.display = 'block'
                 this.tRefs = structuredClone(refData)
                 this.append(refClone.cloneNode(true))
-                setData(this)               
+                setData(this)        
+                console.log('connected')       
             }
         }
     )
