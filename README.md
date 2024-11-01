@@ -64,7 +64,7 @@ import {
   defineCustomElements // for all template present in the document
   defineCustomElement, // for one template id
   getAttributes // for one template id
-} from 'dry-html'
+} from '@titsoft/dry-html'
 
 ```
 
