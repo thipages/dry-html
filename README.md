@@ -4,6 +4,7 @@
 - avoiding to copy and paste identical portion of HTML,
 - changing in one place (the template) any HTML modifications.
 
+see also [layout-m](https://github.com/thipages/layout-m) for creating flows of template instances.
 ## Example
 
 ```html
@@ -16,12 +17,18 @@
 </template>
 <!--
 write the template instance elements
- - based on template id
- - with placeholders as attributes
+ - based on template id (group-two)
+ - with placeholders as attributes (t-field and t-type)
  -->
  <form>
-    <group-two t-field="Name" t-type="text"></group-two>
-    <group-two t-field="Birthday" t-type="datetime-local"></group-two>
+    <group-two
+      t-field="Name"
+      t-type="text"
+    ></group-two>
+    <group-two
+      t-field="Birthday"
+      t-type="datetime-local">
+    </group-two>
 </form>
 ```
 
@@ -42,7 +49,7 @@ write the template instance elements
 
 ## Installation
 
-Either place a script tag in your HTML file like this
+Either place a script tag in your HTML file like this (corresponding to `src/auto.js`)
 ```html
   <script src="dry-html.js"></script>
 ```
@@ -60,6 +67,6 @@ getAttributes(id) // gives all placeholders/attributes for one template id
 ```
 
 ## Tests
-See the `test/index.html` file to understand the technical scope
+See `test/index.html` to get the full technical scope
 
 

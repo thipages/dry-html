@@ -1,7 +1,5 @@
 import {} from '../../src/auto.js'
 document.addEventListener('DOMContentLoaded', run)
-// DEV: found one recurent case where systematic trailing ; is missing
-// Good practices vs light reading...
 function run() {
     let span, id, desc, clicked
     id = 'test'
