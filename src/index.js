@@ -24,6 +24,7 @@ function getAttributes(templateId) {
  */
 function setup(templateId) {
     const template = document.getElementById(templateId)
+    const tClass = template.getAttribute('class')
     const refClone = template.content.cloneNode(true)
     const refData = computeAttributes(refClone)
     computeInnerText(refClone, refData)
@@ -33,7 +34,7 @@ function setup(templateId) {
             attributes.add(map)
         }
     }
-    return {refClone, refData, attributes:[...attributes]}
+    return {refClone, refData, attributes:[...attributes], tClass}
 }
 function checkTemplateIdValidity(templateId) {
     if (!templateId) return false
@@ -47,7 +48,7 @@ function defineCustomElements() {
 }
 function defineCustomElement(templateId) {
     if (!checkTemplateIdValidity(templateId)) return
-    const {refClone, refData} = setup(templateId)
+    const {refClone, refData, tClass} = setup(templateId)
     //
     customElements.define(templateId,
         class extends HTMLElement {
@@ -56,10 +57,10 @@ function defineCustomElement(templateId) {
             }
             connectedCallback() {
                 this.style.display = 'block'
+                if (!this.hasAttributes('class')) this.setAttribute('class', tClass)
                 this.tRefs = structuredClone(refData)
                 this.append(refClone.cloneNode(true))
-                setData(this)        
-                console.log('connected')       
+                setData(this)     
             }
         }
     )

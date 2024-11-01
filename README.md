@@ -9,23 +9,25 @@ see also [layout-m](https://github.com/thipages/layout-m) for creating flows of 
 
 ```html
 <!-- declare a template  with a dashed id and placeholders (t-*) -->
-<template id="group-two">
-    <div>
-        <label>{t-field}</label>
-        <input type="{t-type}" />
-    </div>
+// class attribute is transfered to the custom-element
+<template id="group-two" class="a-class">
+    <label>{t-field}</label>
+    <input type="{t-type}" />
 </template>
 <!--
 write the template instance elements
  - based on template id (group-two)
  - with placeholders as attributes (t-field and t-type)
+ - with template class attribute if no class is defined
  -->
  <form>
     <group-two
       t-field="Name"
       t-type="text"
     ></group-two>
+    <!-- another-class replaces a-class -->
     <group-two
+      class="another-class" 
       t-field="Birthday"
       t-type="datetime-local">
     </group-two>

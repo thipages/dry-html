@@ -7,8 +7,9 @@
     <script type="module" src="index.js"></script>
     <!--script src="./../dry-html.js"></script-->
     <style>
-        .ok  { color: green }
-        .nok {color: orangered}
+        .ok  { color: green; }
+        .nok { color: orangered; }
+        .block { display: block; }
     </style>
 </head>
 <body>
@@ -47,6 +48,21 @@
         <test-t3
             t-name="t3-name"
         ></test-t3>
+        <!-- transfer class from template to custom-element -->
+        <template id="test-t4" class="ok">
+            <span>before{t-name}after</span>
+        </template>
+        <test-t4
+            t-name="t4-name"
+        ></test-t4>
+        <!-- transfer class from template to custom-element -->
+        <template id="test-t5" class="ok">
+            <span>before{t-name}after</span>
+        </template>
+        <test-t5
+            class="nok"
+            t-name="t5-name"
+        ></test-t5>
     </section>
 </body>
 </html>

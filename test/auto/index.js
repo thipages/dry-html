@@ -18,6 +18,14 @@ function run() {
     ;[span, desc] = select(id, '> span')
     add (desc, span.textContent === 't3-name')
     //
+    id = 'test-t4'
+    ;[span, desc] = select(id, '> span')
+    add (desc, span.parentElement.getAttribute('class') === 'ok')
+    //
+    id = 'test-t5'
+    ;[span, desc] = select(id, '> span')
+    add (desc, span.parentElement.getAttribute('class') === 'nok')
+    //
 }
 let index = 1
 
