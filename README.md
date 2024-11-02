@@ -62,13 +62,15 @@ Or via `npm i @titsoft/dry-html` with the following exports
 ```javascript
 import { defineCustomElements, defineCustomElement, getAttributes } from '@titsoft/dry-html'
 
-defineCustomElements() // define custom-elements for all templates based on their id
-defineCustomElement(id) // define a custom-element for one template id
+defineCustomElements() // defines custom-elements for all templates based on their id
+defineCustomElement(id) // defines a custom-element for one template id
 getAttributes(id) // gives all placeholders/attributes for one template id
 
 ```
 
 ## Tests
-See `test/index.html` to get the full technical scope
+To get the technical scope, see
+- `test/auto/index.html`
+- `test/module/index.html`
 
 
