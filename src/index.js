@@ -57,7 +57,7 @@ function defineCustomElement(templateId) {
             }
             connectedCallback() {
                 this.style.display = 'block'
-                if (!this.hasAttributes('class')) this.setAttribute('class', tClass)
+                if (!this.hasAttribute('class')) this.setAttribute('class', tClass)
                 this.tRefs = structuredClone(refData)
                 this.append(refClone.cloneNode(true))
                 setData(this)     
