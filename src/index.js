@@ -52,13 +52,14 @@ function defineCustomElement(templateId) {
     //
     customElements.define(templateId,
         class extends HTMLElement {
+            #connected = false
             constructor() {
                 super()
             }
             connectedCallback() {
                 // Avoid multiple connection when this element is deconnected
-                if (this.connected) return
-                this.connected = true
+                if (this.#connected) return
+                this.#connected = true
                 this.style.display = 'block'
                 if (!this.hasAttribute('class')) this.setAttribute('class', tClass)
                 this.tRefs = structuredClone(refData)
