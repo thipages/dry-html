@@ -56,6 +56,9 @@ function defineCustomElement(templateId) {
                 super()
             }
             connectedCallback() {
+                // Avoid multiple connection when this element is deconnected
+                if (this.connected) return
+                this.connected = true
                 this.style.display = 'block'
                 if (!this.hasAttribute('class')) this.setAttribute('class', tClass)
                 this.tRefs = structuredClone(refData)
