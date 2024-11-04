@@ -1,5 +1,5 @@
 import { defineCustomElement, getAttributes} from '../../src/index.js'
-document.addEventListener('DOMContentLoaded', run)
+setTimeout(run, 100)
 function run() {
     const observed = getAttributes('test-t1')
     const expected = ['t-name', 't-class']

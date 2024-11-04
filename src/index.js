@@ -1,3 +1,4 @@
+import MElement from "@titsoft/m-element"
 // Id generator
 const fixedId = ('dry-'+Math.random()).replace('.', '')
 let count = 1
@@ -51,15 +52,11 @@ function defineCustomElement(templateId) {
     const {refClone, refData, tClass} = setup(templateId)
     //
     customElements.define(templateId,
-        class extends HTMLElement {
-            #connected = false
+        class extends MElement {
             constructor() {
                 super()
             }
-            connectedCallback() {
-                // Avoid multiple connection when this element is deconnected
-                if (this.#connected) return
-                this.#connected = true
+            init() {
                 this.style.display = 'block'
                 if (!this.hasAttribute('class')) this.setAttribute('class', tClass)
                 this.tRefs = structuredClone(refData)

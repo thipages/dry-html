@@ -1,5 +1,5 @@
 import {} from '../../src/auto.js'
-document.addEventListener('DOMContentLoaded', run)
+setTimeout(run, 100)
 function run() {
     let span, id, desc, clicked
     id = 'test'
@@ -9,7 +9,7 @@ function run() {
     id = 'test-t1'
     ;[span, desc] = select(id, '> span')
     add (desc, span.textContent === 't1-name')
-    //
+    
     id = 'test-t2'
     ;[span, desc] = select(id, '> span')
     add (desc, span.classList[0] === 'ok')
@@ -25,7 +25,7 @@ function run() {
     id = 'test-t5'
     ;[span, desc] = select(id, '> span')
     add (desc, span.parentElement.getAttribute('class') === 'nok')
-    //
+    
 }
 let index = 1
 
