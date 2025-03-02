@@ -1,6 +1,6 @@
 {
   "name": "@titsoft/dry-html",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "DRY html",
   "main": "src/index.js",
   "type": "module",
@@ -30,6 +30,6 @@
     "@rollup/plugin-terser": "^0.4.4"
   },
   "dependencies": {
-    "@titsoft/m-element": "^0.2.0"
+    "@titsoft/m-element": "^0.8.0"
   }
 }
